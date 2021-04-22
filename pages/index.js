@@ -1,5 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Me from '../sections/Me'
+import PortfolioAppBar from '../components/PortfolioAppBar'
+import Portfolio from '../sections/Portfolio'
 
 export default function Home() {
   return (
@@ -8,6 +11,10 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <PortfolioAppBar />
+      <Me />
+      <Portfolio />
 
       <main className={styles.main}>
         <h1 className={styles.title}>
