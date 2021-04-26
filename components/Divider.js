@@ -1,20 +1,23 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { Box, Grid } from "@material-ui/core";
 
 const Divider = (params) => {
-    const lineClasses = `max-w-xs h-1 w-full ${
-        params.isLight ? "bg-white" : "bg-primary"
-    }`;
-    const iconClasses = `text-4xl ${params.isLight ? "text-white" : "text-primary"}`
     return (
-        <div className="flex mt-5 mb-6 w-full justify-center items-center">
-            <div className={`${lineClasses} mr-4`}></div>
-            <div className={iconClasses}>
+        <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+            className="mb-6"
+        >
+            <Box maxWidth="11rem" height="0.25rem" width="100%" bgcolor={params.isLight ? 'white' : 'text.primary'} mr={2} />
+            <Box fontSize={32}>
                 <FontAwesomeIcon icon={faStar} />
-            </div>
-            <div className={`${lineClasses} ml-4`}></div>
-        </div>
+            </Box>
+            <Box maxWidth="11rem" height="0.25rem" width="100%" bgcolor={params.isLight ? 'white' : 'text.primary'} ml={2} />
+        </Grid>
     );
 };
 
