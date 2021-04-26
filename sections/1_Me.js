@@ -2,12 +2,13 @@ import React from "react";
 import Image from "next/image";
 import { Box, Grid, Typography } from "@material-ui/core";
 import Divider from "../components/Divider";
+import { LabelImportant } from "@material-ui/icons";
 
 const Me = () => {
     return (
         <Box
             component="header"
-            pt={12}
+            pt={24}
             pb={12}
             style={{ backgroundImage: "url('/img/background.jpg')" }}
         >
@@ -24,10 +25,37 @@ const Me = () => {
                     <Typography variant="h2">
                         <Box fontWeight="fontWeightMedium">Alex Macrae</Box>
                     </Typography>
-                    <Divider isLight="true" />
-                    <Typography variant="h5">
-                        Android Developer - iOS Developer - Linux Lover
-                    </Typography>
+                    <Box pb={4}>
+                        <Divider isLight="true" />
+                    </Box>
+                    <Grid
+                        container
+                        justify="center"
+                        alignItems="center"
+                        spacing={2}
+                    >
+                        <Grid item>
+                            <Typography variant="h5">
+                                Mobile Developer
+                            </Typography>
+                        </Grid>
+                        <Grid item>
+                            <LabelImportant />
+                        </Grid>
+                        <Grid item>
+                            <Typography variant="h5">
+                                Front End Developer
+                            </Typography>
+                        </Grid>
+                        <Grid item>
+                            <LabelImportant />
+                        </Grid>
+                        <Grid item>
+                            <Typography variant="h5">
+                                Open Source Advocate
+                            </Typography>
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Box>
         </Box>

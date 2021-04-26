@@ -61,9 +61,12 @@ const sizeToFontSize = (size) => {
 const AlwaysLearning = () => {
     return (
         <div>
-            <SectionHeader header="Always Learning" />
             <Container>
-                <Paper elevation={3} style={{padding: "16px", marginBottom: "32px"}}>
+                <SectionHeader header="Always Learning" />
+                <Paper
+                    elevation={3}
+                    style={{ padding: "16px", marginBottom: "32px" }}
+                >
                     <Grid
                         container
                         direction="row"
