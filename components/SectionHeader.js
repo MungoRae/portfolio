@@ -2,13 +2,13 @@ import { Box, Typography } from "@material-ui/core";
 import React from "react";
 import Divider from "./Divider";
 
-const SectionHeader = (params) => {
+const SectionHeader = (props) => {
     return (
         <Box pt={8} pb={4}>
-            <Typography variant="h3" align="center">
-                <Box fontWeight="fontWeightBold">{params.header}</Box>
+            <Typography variant="h4" align="center">
+                <Box fontWeight="fontWeightBold">{props.header}</Box>
             </Typography>
-            <Divider isLight={params.isLight} />
+            <Divider isLight={props.isLight} />
         </Box>
     );
 };

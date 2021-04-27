@@ -12,6 +12,7 @@ import {
     useScrollTrigger,
 } from "@material-ui/core";
 import MoreIcon from "@material-ui/icons/MoreVert";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -67,9 +68,9 @@ function ResizeToolbarScroll(props) {
     });
 }
 
-const PortfolioAppBar = (params) => {
+const PortfolioAppBar = (props) => {
     const classes = useStyles();
-
+    const router = useRouter();
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -82,6 +83,10 @@ const PortfolioAppBar = (params) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
 
+    const moveToSection = (item) => {
+        router.push('/#' + item.replace(' ', '').toLowerCase())
+    }
+
     const mobileMenuId = "primary-search-account-menu-mobile";
     const renderMobileMenu = (
         <Menu
@@ -93,8 +98,8 @@ const PortfolioAppBar = (params) => {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            {params.menuItems.map((item) => (
-                <MenuItem>
+            {props.menuItems.map((item, index) => (
+                <MenuItem key={index} onClick={() => moveToSection(item)}>
                     <p>{item}</p>
                 </MenuItem>
             ))}
@@ -111,8 +116,12 @@ const PortfolioAppBar = (params) => {
                                 Refactoring The World
                             </Typography>
                             <div className={classes.sectionDesktop}>
-                                {params.menuItems.map((item) => (
-                                    <Button color="inherit">
+                                {props.menuItems.map((item, index) => (
+                                    <Button
+                                        key={index}
+                                        color="inherit"
+                                        onClick={() => moveToSection(item)}
+                                    >
                                         <p>{item}</p>
                                     </Button>
                                 ))}

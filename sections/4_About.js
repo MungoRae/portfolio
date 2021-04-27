@@ -1,14 +1,36 @@
-import { Box, Container, Grid, Typography } from "@material-ui/core";
+import {
+    Box,
+    Container,
+    createMuiTheme,
+    Grid,
+    ThemeProvider,
+    Typography,
+} from "@material-ui/core";
 import React from "react";
 import SectionHeader from "../components/SectionHeader";
 
-const About = () => {
+const whiteTextTheme = createMuiTheme({
+    palette: {
+        text: {
+            primary: "#fff",
+        },
+    },
+});
+
+const About = (props) => {
     return (
-        <section>
+        <section id={props.id}>
             <Box bgcolor="secondary.main" color="white" pb={6}>
                 <Container>
-                    <SectionHeader isLight header="About" />
-                    <Grid container direction="row" justify="center" spacing={2}>
+                    <ThemeProvider theme={whiteTextTheme}>
+                        <SectionHeader isLight header="About" />
+                    </ThemeProvider>
+                    <Grid
+                        container
+                        direction="row"
+                        justify="center"
+                        spacing={2}
+                    >
                         <Grid item xs={3}>
                             <Typography variant="body1">
                                 I am an enthusiastic mobile developer with 4

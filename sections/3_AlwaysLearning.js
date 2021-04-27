@@ -58,9 +58,9 @@ const sizeToFontSize = (size) => {
  *
  * @returns Word collage of technologies I have learned
  */
-const AlwaysLearning = () => {
+const AlwaysLearning = (props) => {
     return (
-        <div>
+        <div id={props.id}>
             <Container>
                 <SectionHeader header="Always Learning" />
                 <Paper

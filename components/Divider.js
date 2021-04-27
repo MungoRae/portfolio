@@ -1,37 +1,37 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { Box, Grid } from "@material-ui/core";
+import { Box, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(() => ({
     divider: {
         height: "0.25rem",
         width: "8rem",
     },
-});
+}));
 
-const Divider = (params) => {
+const Divider = () => {
     const classes = useStyles();
 
     return (
-        <Grid container direction="row" justify="center" alignItems="center" spacing={2}>
+        <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+            spacing={2}
+        >
             <Grid item>
-                <Box component="div"
-                    className={classes.divider}
-                    bgcolor={params.isLight ? "white" : "text.primary"}
-                />
+                <Box className={classes.divider} bgcolor={"text.primary"} />
             </Grid>
             <Grid item>
-                <Box fontSize={32}>
+                <Typography variant="h5">
                     <FontAwesomeIcon icon={faStar} />
-                </Box>
+                </Typography>
             </Grid>
             <Grid item>
-                <Box
-                    className={classes.divider}
-                    bgcolor={params.isLight ? "white" : "text.primary"}
-                />
+                <Box className={classes.divider} bgcolor={"text.primary"} />
             </Grid>
         </Grid>
     );

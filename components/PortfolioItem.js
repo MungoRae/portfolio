@@ -10,33 +10,45 @@ const useStyles = makeStyles({
     root: {
         width: 300,
     },
+    content: {
+        height: "120px",
+    },
     media: {
         height: 140,
     },
 });
 
-export default function PortfolioItem(params) {
+export default function PortfolioItem(props) {
     const classes = useStyles();
 
     return (
         <Card className={classes.root} elevation={3}>
-            <CardActionArea>
+            <CardActionArea onClick={() => props.onPortfolioItemClicked(props.id)}>
                 <CardMedia
                     className={classes.media}
-                    image={params.image}
+                    image={props.image}
                     title="Company Logo"
                 />
-                <CardContent>
+                <CardContent className={classes.content}>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {params.title}
+                        {props.title}
                     </Typography>
                     <Typography
                         variant="body2"
                         color="textSecondary"
                         component="p"
                     >
-                        {params.description}
+                        {props.summary}
                     </Typography>
+                    {/* {params.description.map((d) => (
+                        <Typography
+                            variant="body2"
+                            color="textSecondary"
+                            component="p"
+                        >
+                            {d}
+                        </Typography>
+                    ))} */}
                 </CardContent>
             </CardActionArea>
         </Card>

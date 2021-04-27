@@ -3,9 +3,9 @@ import React from "react";
 import SectionHeader from "../components/SectionHeader";
 import SendIcon from '@material-ui/icons/Send'
 
-const ContactUs = () => {
+const ContactUs = (props) => {
     return (
-        <Box component="section" pb={8}>
+        <Box id={props.id} component="section" pb={8}>
             <Container maxWidth="sm">
                 <SectionHeader header="Contact Me" />
                 <form id="contactForm" name="sentMessage" noValidate>
