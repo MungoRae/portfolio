@@ -76,7 +76,7 @@ const AlwaysLearning = (props) => {
                     >
                         {words.map((word, index) => (
                             <Grid key={index} item>
-                                <Typography variant="body1">
+                                <Typography component="span" variant="body1">
                                     <Box
                                         fontSize={sizeToFontSize(word.size)}
                                         lineHeight={1}
