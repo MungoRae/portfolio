@@ -1,5 +1,4 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import Me from "../sections/1_Me";
 import PortfolioAppBar from "../components/PortfolioAppBar";
 import Portfolio from "../sections/2_Portfolio";
@@ -112,12 +111,11 @@ export default function Home() {
     const [modal, setModal] = useState(null);
 
     const onPortfolioItemClicked = (id) => {
-        console.log("hit id " + id);
         setModal(id);
     };
 
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
                 <title>Portfolio</title>
                 <link rel="icon" href="/favicon.ico" />

@@ -9,6 +9,7 @@ import {
 import React from "react";
 import { LinkedIn, Twitter } from "@material-ui/icons";
 import { makeStyles, ThemeProvider } from "@material-ui/styles";
+import { useRouter } from "next/router";
 
 const whiteTheme = createMuiTheme({
     palette: {
@@ -34,6 +35,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Footer = () => {
     const classes = useStyles();
+    const router = useRouter();
+
     return (
         <Box
             component="footer"
@@ -64,6 +67,7 @@ const Footer = () => {
                                 endIcon={<LinkedIn />}
                                 color="primary"
                                 className={classes.button}
+                                onClick={() => router.push('https://www.linkedin.com/in/alex-macrae-46402756')}
                             >
                                 LinkedIn
                             </Button>
@@ -72,6 +76,7 @@ const Footer = () => {
                                 endIcon={<Twitter />}
                                 color="primary"
                                 className={classes.button}
+                                onClick={() => router.push('https://twitter.com/MungoRae')}
                             >
                                 Twitter
                             </Button>
